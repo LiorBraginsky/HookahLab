@@ -1,0 +1,33 @@
+.my-input__wrapper {
+  display: grid;
+  grid-template-rows: 1fr;
+  justify-items: left;
+  padding: 3px 0;
+  margin-bottom: 5px;
+}
+
+.my-input__wrapper.error > .my-input__label {
+  color: red;
+}
+
+.my-input__wrapper.error > .my-input__input {
+  border-bottom: 1px solid red;
+}
+
+.my-input__label {
+  margin-bottom: 3px;
+}
+
+.my-input__input {
+  width: 100%;
+  padding: 4px 3px;
+  margin-bottom: 3px;
+  font-size: 16px;
+  border: none;
+  border-bottom: 1px solid black;
+}
+
+.my-input__input:focus {
+  outline: none;
+  border-bottom: 1px solid green;
+}
