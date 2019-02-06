@@ -2,24 +2,33 @@ import React from "react";
 import MyInput from "../MyInput";
 import MyForm from "../MyFrom";
 import MyButton from "../MyButton";
-import { addTobacco } from "../../store/actions";
 import "./styles.css";
 
 class TabaccoForm extends React.Component {
   constructor() {
     super();
-
     this.state = {
       hasError: false,
-      tabaccoInfo: {},
+      tobaccoInfo: {},
       errors: {}
     };
   }
 
+  componentDidMount() {
+    const { isEdit, value } = this.props
+    if (isEdit) {
+      console.log(value);
+
+      this.setState({
+        tobaccoInfo: value
+      })
+    }
+  }
+
   onChangeHandler = e => {
     this.setState({
-      tabaccoInfo: {
-        ...this.state.tabaccoInfo,
+      tobaccoInfo: {
+        ...this.state.tobaccoInfo,
         [e.target.name]: e.target.value
       },
       errors: {
@@ -31,16 +40,16 @@ class TabaccoForm extends React.Component {
 
   submit = e => {
     e.preventDefault();
-    const { tabaccoInfo } = this.state;
+    const { tobaccoInfo } = this.state;
 
-    if (!tabaccoInfo.nameTabacco || !tabaccoInfo.tasteTabacco) {
+    if (!tobaccoInfo.nameTabacco || !tobaccoInfo.tasteTabacco) {
       let erorrs = {};
 
-      if (!tabaccoInfo.nameTabacco) {
+      if (!tobaccoInfo.nameTabacco) {
         erorrs.nameTabacco = "type Name Tabacco";
       }
 
-      if (!tabaccoInfo.tasteTabacco) {
+      if (!tobaccoInfo.tasteTabacco) {
         erorrs.tasteTabacco = "type Taste for Tabacco";
       }
 
@@ -53,20 +62,22 @@ class TabaccoForm extends React.Component {
         hasError: false
       });
 
-      this.props.onSubmit(tabaccoInfo);
+      this.props.onSubmit(tobaccoInfo);
     }
   };
 
   render() {
-    const { errors } = this.state;
+    const { errors, tobaccoInfo } = this.state;
+    const { item, page } = this.props;
     return (
       <div className="TabaccoFrom">
-        <h1>Add Tabacco</h1>
+        <h1>{page}</h1>
         <MyForm>
           <MyInput
             onChange={this.onChangeHandler}
             name="nameTabacco"
             label="Name Tabacco"
+            value={tobaccoInfo.nameTabacco || ''}
             error={errors.nameTabacco}
           />
           <MyInput
@@ -74,12 +85,18 @@ class TabaccoForm extends React.Component {
             name="tasteTabacco"
             label="Tabacco taste"
             error={errors.tasteTabacco}
+            value={tobaccoInfo.tasteTabacco || ''}
           />
           <label>Add Description</label>
           <br />
-          {/*<textarea name={"comment"} cols="40" rows="3" />*/}
+          <textarea
+            name="description"
+            onChange={this.onChangeHandler}
+            cols="40"
+            rows="3"
+          />
           <MyButton onClick={this.submit} type="submit">
-            Add Tabacco
+            {page}
           </MyButton>
         </MyForm>
       </div>

@@ -1,7 +1,5 @@
 import React from "react";
-import MyInput from "../MyInput";
 import { Link } from "react-router-dom";
-import TodoList from "../TodoList";
 import TabaccoForm from "../TabaccoForm";
 import { addTobacco } from "../../store/actions";
 import { connect } from "react-redux";
@@ -9,11 +7,11 @@ import { connect } from "react-redux";
 const Home = props => {
   return (
     <div>
-      <Link to="/">login</Link>
+      <Link to="/">Login</Link>
       <Link to="/catalog">Catalog</Link>
       <p>Home Page</p>
-      {/* <TodoList />  */}
       <TabaccoForm
+        page={"Add Tobbaco"}
         onSubmit={tobacco => {
           props.addTobacco(tobacco);
           props.history.push("/catalog");
@@ -23,9 +21,9 @@ const Home = props => {
   );
 };
 
-const mapStateToProps = state => {
-  return {};
-};
+// const mapStateToProps = state => {
+//   return {};
+// };
 
 const mapDispatchToProps = {
   addTobacco

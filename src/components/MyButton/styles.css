@@ -17,3 +17,11 @@
 .my-button:focus {
   background-color: #27ae60;
 }
+
+.edit {
+  background-color: #2156d1
+}
+
+.delete {
+  background-color: #e82243;
+}

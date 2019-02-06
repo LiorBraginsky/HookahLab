@@ -3,32 +3,40 @@ import React from "react";
 import CatalogItem from "./CatalogItem";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
-
+import { deleteTobacco } from '../../store/actions';
+// import { editTobacco } from '../../store/actions';
 import "./styles.css";
 
 class Catalog extends React.Component {
-  // constructor(){}
+
+  editHandler = (id) => () => {
+    this.props.history.push(`/edit/${id}`);
+  }
 
   render() {
     console.log(this.props);
     const { tobaccoList } = this.props;
     return (
-      <div className="Catalog">
-        <div>
+      <div className="CatalogWrapper">
+        <div className="Title">
           <Link to="/">login</Link>
           <br />
           <Link to="/home">Home</Link>
           <h1>Hookah Catalog</h1>
         </div>
-        {tobaccoList.map(item => {
-          return (
-            <CatalogItem
-              key={item.id}
-              tobacco={item}
-              onClickDelete={() => {}}
-            />
-          );
-        })}
+        <div className="Catalog">
+          {tobaccoList.map(item => {
+            return (
+              <CatalogItem
+                key={item.id}
+                tobacco={item}
+                onClickDelete={() => this.props.deleteTobacco(item.id)}
+                // onClickEdit={() => this.props.editTobacco(item.id)}
+                onClickEdit={this.editHandler(item.id)}
+              />
+            );
+          })}
+        </div>
       </div>
     );
   }
@@ -40,7 +48,12 @@ const mapStateToProps = state => {
   };
 };
 
+const mapDispatchToProps = {
+  deleteTobacco
+}
+
+
 export default connect(
   mapStateToProps,
-  null
+  mapDispatchToProps
 )(Catalog);

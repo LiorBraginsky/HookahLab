@@ -4,11 +4,9 @@ import Home from "./components/PageHome";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import LoginPage from "./LoginPage";
 import Catalog from "./components/Catalog";
-import MyInput from "./components/MyInput";
 import { Provider } from "react-redux";
 import store from "./store/index";
-// import { Provider } from "react-redux";
-// import store from "./components/store";
+import PageEdit from "./components/PageEdit";
 
 import "./styles.css";
 
@@ -30,6 +28,7 @@ class App extends React.Component {
             <Route exact path="/" component={LoginPage} />
             <Route path="/home" component={Home} />
             <Route path="/catalog" component={Catalog} />
+            <Route path="/edit/:tobaccoId" component={PageEdit} />
           </div>
         </Router>
       </div>
