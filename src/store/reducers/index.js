@@ -3,13 +3,13 @@ import { ADD_TABACCO } from "../constants/action-types";
 import { DELETE_TABACCO } from "../constants/action-types";
 import { EDIT_TABACCO } from "../constants/action-types";
 
+const tobaccoFromLS = JSON.parse(localStorage.getItem('tabak')) || []
 
 const initialState = {
-  tobacco: [{
-    nameTabacco: 'name tobacco',
-    tasteTabacco: 'taste',
-    id: '1',
-  }]
+  tobacco: [
+    ...tobaccoFromLS,
+  ]
+
 };
 
 function rootReducer(state = initialState, action) {
@@ -32,7 +32,7 @@ function rootReducer(state = initialState, action) {
 
     case DELETE_TABACCO: {
       const newTobacco = state.tobacco.filter(item => item.id !== action.payload)
-
+      localStorage.setItem('tabak', JSON.stringify(newTobacco))
       return {
         ...state,
         tobacco: newTobacco
@@ -40,13 +40,14 @@ function rootReducer(state = initialState, action) {
     }
     case EDIT_TABACCO: {
       const newTobacco = action.payload;
-      //1. find old tobacco
       const newTobaccoList = state.tobacco.filter(item => item.id !== newTobacco.id)
       newTobaccoList.push(newTobacco)
 
-      state.tobacco = [...newTobaccoList];
-      localStorage.setItem('tobaccoItems', JSON.stringify(newTobaccoList))
-
+      localStorage.setItem('tabak', JSON.stringify(newTobaccoList))
+      return {
+        ...state,
+        tobacco: newTobaccoList
+      }
     }
       return state
   }

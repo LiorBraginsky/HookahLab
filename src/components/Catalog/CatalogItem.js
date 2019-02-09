@@ -5,6 +5,7 @@ import "./styles.css";
 
 const CatalogItem = props => {
   const { tobacco } = props;
+  console.log(tobacco)
   return (
     <div className="CatalogItem">
       <p>Tabacco Name: {tobacco.nameTabacco}</p>

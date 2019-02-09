@@ -3,6 +3,8 @@ import MyInput from "../MyInput";
 import MyForm from "../MyFrom";
 import MyButton from "../MyButton";
 import "./styles.css";
+import Alerts from "../Alerts";
+
 
 class TabaccoForm extends React.Component {
   constructor() {
@@ -36,6 +38,7 @@ class TabaccoForm extends React.Component {
         [e.target.name]: ""
       }
     });
+
   };
 
   submit = e => {
@@ -44,7 +47,7 @@ class TabaccoForm extends React.Component {
 
     if (!tobaccoInfo.nameTabacco
       || !tobaccoInfo.tasteTabacco
-      // || !tobaccoInfo.descriptionTabacco
+      || !tobaccoInfo.description
     ) {
       let erorrs = {};
 
@@ -56,9 +59,9 @@ class TabaccoForm extends React.Component {
         erorrs.tasteTabacco = "type Taste for Tabacco";
       }
 
-      // if (!tobaccoInfo.descriptionTabacco) {
-      //   erorrs.descriptionTabacco = "type Tabacco description";
-      // }
+      if (!tobaccoInfo.description) {
+        erorrs.description = "type Tabacco description";
+      }
 
       this.setState({
         hasError: true,
@@ -72,16 +75,12 @@ class TabaccoForm extends React.Component {
       this.props.onSubmit(tobaccoInfo);
     }
 
-    // localStorage.setItem('tobbacoItems', JSON.stringify(tobaccoInfo))
 
   };
 
-  // componentWillUpdate(nextProps, nextState) {
-  //   localStorage.setItem('tobbacoItems', JSON.stringify(nextState.tobaccoInfo))
-  // } 
 
   render() {
-    const { errors, tobaccoInfo } = this.state;
+    const { errors, tobaccoInfo, value, error } = this.state;
     const { page } = this.props;
     return (
       <div className="TabaccoFrom">
@@ -106,12 +105,14 @@ class TabaccoForm extends React.Component {
           <textarea
             name="description"
             onChange={this.onChangeHandler}
-            // error={errors.descriptionTabacco}
-            // value={tobaccoInfo.descriptionTabacco}
-            defaultValue="This is a description."
+            // error={errors.description}
+            // value={tobaccoInfo.description}
+            // defaultValue="This is a description."
+            value={tobaccoInfo.description || ''}
             cols="40"
             rows="3"
-          />
+          >{tobaccoInfo.description || ''}</textarea>
+          <Alerts error={errors.description} value={tobaccoInfo.description} />
           <MyButton onClick={this.submit} type="submit">
             {page}
           </MyButton>

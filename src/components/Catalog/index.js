@@ -13,14 +13,15 @@ class Catalog extends React.Component {
     this.props.history.push(`/edit/${id}`);
   }
 
-  componentWillMount() {
-    const tabak = localStorage.getItem('tobbacoItems')
+  componentDidMount() {
+    const tabak = JSON.parse(localStorage.getItem('tabak'))
     console.log(tabak)
   }
 
   render() {
-    console.log(localStorage);
     const { tobaccoList } = this.props;
+    console.log(localStorage);
+    console.log(tobaccoList)
     return (
       <div className="CatalogWrapper">
         <div className="Title">
@@ -30,17 +31,21 @@ class Catalog extends React.Component {
           <h1>Hookah Catalog</h1>
         </div>
         <div className="Catalog">
-          {tobaccoList.map(item => {
-            return (
-              <CatalogItem
-                key={item.id}
-                tobacco={item}
-                onClickDelete={() => this.props.deleteTobacco(item.id)}
-                // onClickEdit={() => this.props.editTobacco(item.id)}
-                onClickEdit={this.editHandler(item.id)}
-              />
-            );
-          })}
+          {
+            tobaccoList ?
+              tobaccoList.map(item => {
+                return (
+                  <CatalogItem
+                    key={item.id}
+                    tobacco={item}
+                    onClickDelete={() => this.props.deleteTobacco(item.id)}
+                    onClickEdit={this.editHandler(item.id)}
+                  />
+                );
+              })
+              :
+              'loading...'
+          }
         </div>
       </div>
     );
