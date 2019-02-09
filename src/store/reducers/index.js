@@ -23,7 +23,7 @@ function rootReducer(state = initialState, action) {
         id: uuid()
       };
       newTobaccoList.push(tobacco)
-
+      localStorage.setItem('tabak', JSON.stringify(newTobaccoList))
       return {
         ...state,
         tobacco: newTobaccoList
@@ -45,26 +45,8 @@ function rootReducer(state = initialState, action) {
       newTobaccoList.push(newTobacco)
 
       state.tobacco = [...newTobaccoList];
-      //2. replace old data to new data
-      // const newCorrectedTobbaco = {
-      //   ...correctedTobacco,
+      localStorage.setItem('tobaccoItems', JSON.stringify(newTobaccoList))
 
-      // }
-
-      // console.log(correctedTobacco)
-
-      //3. replace old tobacco to new one
-
-      //4. update store with new tobaccos
-
-      // const correctedTobacco = {
-      //   ...action.payload,
-      //   updateAt: Date.now()
-      // }
-      // return {
-      //   ...state,
-      //   tobacco: correctedTobacco
-      // }
     }
       return state
   }

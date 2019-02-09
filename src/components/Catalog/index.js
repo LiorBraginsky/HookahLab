@@ -13,8 +13,13 @@ class Catalog extends React.Component {
     this.props.history.push(`/edit/${id}`);
   }
 
+  componentWillMount() {
+    const tabak = localStorage.getItem('tobbacoItems')
+    console.log(tabak)
+  }
+
   render() {
-    console.log(this.props);
+    console.log(localStorage);
     const { tobaccoList } = this.props;
     return (
       <div className="CatalogWrapper">

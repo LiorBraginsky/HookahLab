@@ -42,7 +42,10 @@ class TabaccoForm extends React.Component {
     e.preventDefault();
     const { tobaccoInfo } = this.state;
 
-    if (!tobaccoInfo.nameTabacco || !tobaccoInfo.tasteTabacco) {
+    if (!tobaccoInfo.nameTabacco
+      || !tobaccoInfo.tasteTabacco
+      // || !tobaccoInfo.descriptionTabacco
+    ) {
       let erorrs = {};
 
       if (!tobaccoInfo.nameTabacco) {
@@ -52,6 +55,10 @@ class TabaccoForm extends React.Component {
       if (!tobaccoInfo.tasteTabacco) {
         erorrs.tasteTabacco = "type Taste for Tabacco";
       }
+
+      // if (!tobaccoInfo.descriptionTabacco) {
+      //   erorrs.descriptionTabacco = "type Tabacco description";
+      // }
 
       this.setState({
         hasError: true,
@@ -64,11 +71,18 @@ class TabaccoForm extends React.Component {
 
       this.props.onSubmit(tobaccoInfo);
     }
+
+    // localStorage.setItem('tobbacoItems', JSON.stringify(tobaccoInfo))
+
   };
+
+  // componentWillUpdate(nextProps, nextState) {
+  //   localStorage.setItem('tobbacoItems', JSON.stringify(nextState.tobaccoInfo))
+  // } 
 
   render() {
     const { errors, tobaccoInfo } = this.state;
-    const { item, page } = this.props;
+    const { page } = this.props;
     return (
       <div className="TabaccoFrom">
         <h1>{page}</h1>
@@ -92,6 +106,9 @@ class TabaccoForm extends React.Component {
           <textarea
             name="description"
             onChange={this.onChangeHandler}
+            // error={errors.descriptionTabacco}
+            // value={tobaccoInfo.descriptionTabacco}
+            defaultValue="This is a description."
             cols="40"
             rows="3"
           />
