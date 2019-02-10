@@ -49,9 +49,9 @@ function rootReducer(state = initialState, action) {
         tobacco: newTobaccoList
       }
     }
-      return state
+    default: return state
+
   }
-  return state;
 }
 
 export default rootReducer;

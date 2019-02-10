@@ -35,11 +35,6 @@ class LoginForm extends React.Component {
     });
   };
 
-  componentDidUpdate(_, oldState) {
-    // console.log(oldState);
-    // console.log(this.state);
-  }
-
   submit = e => {
     e.preventDefault();
 

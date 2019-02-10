@@ -19,8 +19,6 @@ class TabaccoForm extends React.Component {
   componentDidMount() {
     const { isEdit, value } = this.props
     if (isEdit) {
-      console.log(value);
-
       this.setState({
         tobaccoInfo: value
       })
@@ -80,7 +78,7 @@ class TabaccoForm extends React.Component {
 
 
   render() {
-    const { errors, tobaccoInfo, value, error } = this.state;
+    const { errors, tobaccoInfo } = this.state;
     const { page } = this.props;
     return (
       <div className="TabaccoFrom">
@@ -105,9 +103,6 @@ class TabaccoForm extends React.Component {
           <textarea
             name="description"
             onChange={this.onChangeHandler}
-            // error={errors.description}
-            // value={tobaccoInfo.description}
-            // defaultValue="This is a description."
             value={tobaccoInfo.description || ''}
             cols="40"
             rows="3"

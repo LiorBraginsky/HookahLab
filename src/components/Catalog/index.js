@@ -1,10 +1,8 @@
 import React from "react";
-// import classnames from "classnames";
 import CatalogItem from "./CatalogItem";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import { deleteTobacco } from '../../store/actions';
-// import { editTobacco } from '../../store/actions';
 import "./styles.css";
 
 class Catalog extends React.Component {
@@ -14,14 +12,11 @@ class Catalog extends React.Component {
   }
 
   componentDidMount() {
-    const tabak = JSON.parse(localStorage.getItem('tabak'))
-    console.log(tabak)
+    JSON.parse(localStorage.getItem('tabak'))
   }
 
   render() {
     const { tobaccoList } = this.props;
-    console.log(localStorage);
-    console.log(tobaccoList)
     return (
       <div className="CatalogWrapper">
         <div className="Title">

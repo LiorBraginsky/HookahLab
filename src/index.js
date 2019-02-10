@@ -11,12 +11,8 @@ import PageEdit from "./components/PageEdit";
 import "./styles.css";
 
 class App extends React.Component {
-  constructor() {
-    super();
-  }
 
   componentDidUpdate(_, oldState) {
-    // console.log(oldState);
     console.log(this.state);
   }
 

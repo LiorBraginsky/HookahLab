@@ -21,10 +21,6 @@ const Home = props => {
   );
 };
 
-// const mapStateToProps = state => {
-//   return {};
-// };
-
 const mapDispatchToProps = {
   addTobacco
 };
