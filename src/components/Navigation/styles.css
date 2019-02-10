@@ -1,0 +1,16 @@
+.Navigation {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  min-width: 900px;
+  height: 55px ;
+  background: #fff;
+  padding: 30px;
+  border-radius: 3px;
+  box-shadow: inset 0px 0px 20px 0px rgba(209, 207, 209, 1);
+  /* grid-gap: 1em; */
+  margin: 50px 0px;
+
+}
+.Navigation > * {
+  text-decoration: none;
+}

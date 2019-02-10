@@ -1,6 +1,5 @@
 import React from "react";
 import CatalogItem from "./CatalogItem";
-import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import { deleteTobacco } from '../../store/actions';
 import "./styles.css";
@@ -20,9 +19,6 @@ class Catalog extends React.Component {
     return (
       <div className="CatalogWrapper">
         <div className="Title">
-          <Link to="/">login</Link>
-          <br />
-          <Link to="/home">Home</Link>
           <h1>Hookah Catalog</h1>
         </div>
         <div className="Catalog">

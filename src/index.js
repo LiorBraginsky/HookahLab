@@ -9,6 +9,7 @@ import store from "./store/index";
 import PageEdit from "./components/PageEdit";
 
 import "./styles.css";
+import Navigation from "./components/Navigation";
 
 class App extends React.Component {
 
@@ -21,6 +22,7 @@ class App extends React.Component {
       <div className="App">
         <Router>
           <div>
+            <Navigation />
             <Route exact path="/" component={LoginPage} />
             <Route path="/home" component={Home} />
             <Route path="/catalog" component={Catalog} />

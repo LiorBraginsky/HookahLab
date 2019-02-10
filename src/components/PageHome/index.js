@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import TabaccoForm from "../TabaccoForm";
 import { addTobacco } from "../../store/actions";
 import { connect } from "react-redux";
@@ -7,9 +6,6 @@ import { connect } from "react-redux";
 const Home = props => {
   return (
     <div>
-      <Link to="/">Login</Link>
-      <Link to="/catalog">Catalog</Link>
-      <p>Home Page</p>
       <TabaccoForm
         page={"Add Tobbaco"}
         onSubmit={tobacco => {

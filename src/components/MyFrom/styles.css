@@ -1,7 +1,7 @@
 .my-form {
   background: white;
-  width: 100%;
-  /* height: 250px; */
+  width: 350px; /* было 100% */
+  margin: 0 auto; /* этого не было */
   border-radius: 3px;
   padding: 35px 20px;
   box-sizing: border-box;
