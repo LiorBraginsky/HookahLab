@@ -18,9 +18,7 @@ class Catalog extends React.Component {
     const { tobaccoList } = this.props;
     return (
       <div className="CatalogWrapper">
-        <div className="Title">
-          <h1>Hookah Catalog</h1>
-        </div>
+        <h1>Hookah Catalog</h1>
         <div className="Catalog">
           {
             tobaccoList ?
@@ -46,13 +44,13 @@ class Catalog extends React.Component {
 const mapStateToProps = state => {
   return {
     tobaccoList: state.tobacco || []
+    
   };
 };
 
 const mapDispatchToProps = {
   deleteTobacco
 }
-
 
 export default connect(
   mapStateToProps,

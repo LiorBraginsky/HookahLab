@@ -2,6 +2,8 @@ import uuid from "uuid/v1";
 import { ADD_TABACCO } from "../constants/action-types";
 import { DELETE_TABACCO } from "../constants/action-types";
 import { EDIT_TABACCO } from "../constants/action-types";
+import { LOGIN } from "../constants/action-types";
+import { LOGOUT } from "../constants/action-types";
 
 const tobaccoFromLS = JSON.parse(localStorage.getItem('tabak')) || []
 
@@ -9,7 +11,6 @@ const initialState = {
   tobacco: [
     ...tobaccoFromLS,
   ]
-
 };
 
 function rootReducer(state = initialState, action) {
@@ -49,9 +50,34 @@ function rootReducer(state = initialState, action) {
         tobacco: newTobaccoList
       }
     }
+    case LOGIN: {
+      const userAcc = {
+        ...action.payload,
+      }
+      const role = isAdmin(userAcc) ? 'admin' : 'user';
+      localStorage.setItem('role', JSON.stringify(role));
+
+      return {
+        ...state
+      }
+    }
+    case LOGOUT: {
+      localStorage.removeItem('role')
+      return {
+        ...state
+      }
+    }
     default: return state
 
   }
+}
+
+function isAdmin(currentUser) {
+  if (currentUser.username === 'test' &&
+    currentUser.password === 'test') {
+    return true
+  }
+  return false
 }
 
 export default rootReducer;

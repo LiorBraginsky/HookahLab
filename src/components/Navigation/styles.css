@@ -1,6 +1,6 @@
 .Navigation {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
   min-width: 900px;
   height: 55px ;
   background: #fff;
@@ -11,6 +11,7 @@
   margin: 50px 0px;
 
 }
+
 .Navigation > * {
   text-decoration: none;
 }

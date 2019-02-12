@@ -7,9 +7,9 @@ import Catalog from "./components/Catalog";
 import { Provider } from "react-redux";
 import store from "./store/index";
 import PageEdit from "./components/PageEdit";
+import Navigation from "./components/Navigation";
 
 import "./styles.css";
-import Navigation from "./components/Navigation";
 
 class App extends React.Component {
 

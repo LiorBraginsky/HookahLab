@@ -2,9 +2,9 @@ import React from "react";
 import MyInput from "../MyInput";
 import MyForm from "../MyFrom";
 import MyButton from "../MyButton";
-import "./styles.css";
 import Alerts from "../Alerts";
 
+import "./styles.css";
 
 class TabaccoForm extends React.Component {
   constructor() {
@@ -76,7 +76,6 @@ class TabaccoForm extends React.Component {
 
   };
 
-
   render() {
     const { errors, tobaccoInfo } = this.state;
     const { page } = this.props;
@@ -107,7 +106,9 @@ class TabaccoForm extends React.Component {
             cols="40"
             rows="3"
           >{tobaccoInfo.description || ''}</textarea>
-          <Alerts error={errors.description} value={tobaccoInfo.description} />
+          <Alerts 
+            error={errors.description} 
+            value={tobaccoInfo.description} />
           <MyButton onClick={this.submit} type="submit">
             {page}
           </MyButton>
