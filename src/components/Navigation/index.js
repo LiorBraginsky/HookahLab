@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
-import "./styles.css";
 import MyButton from '../MyButton';
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import { logout } from '../../store/actions';
+
+import "./styles.css";
 
 class Navigation extends Component {
   render() {

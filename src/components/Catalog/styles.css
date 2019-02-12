@@ -1,6 +1,5 @@
 .Catalog {
-  min-width: 900px;
-  min-height: 500px ;
+  height: 100% ;
   background: #fff;
   padding: 50px;
   border-radius: 3px;
@@ -10,7 +9,22 @@
   grid-gap: 1em;
 }
 
+.CatalogWrapper {
+  width: 100%;
+}
+
 .CatalogItem {
-  border: 2px solid burlywood;
-  border-radius: 3px;
+  height: 200px;
+  border-right: 1px solid #eaeaea;
+  border-bottom: 1px solid #eaeaea;
+  box-sizing: border-box;
+  transition: 0.8s ;
+}
+
+.CatalogItem:hover {
+  box-shadow: 0 0 13px 0 rgba(0,0,0,.4);
+  margin: -20px -5px 0px -25px;
+  /* height: 140%; */
+  background: white;
+  z-index: 10;
 }
