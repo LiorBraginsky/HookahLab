@@ -10,6 +10,30 @@ const tobaccoFromLS = JSON.parse(localStorage.getItem('tabak')) || []
 const initialState = {
   tobacco: [
     ...tobaccoFromLS,
+
+    { nameTabacco: "qwe", tasteTabacco: "qwe", description: "qwe" },
+    { nameTabacco: "qwe", tasteTabacco: "qwe", description: "qwe" },
+    { nameTabacco: "qwe", tasteTabacco: "qwe", description: "qwe" },
+    { nameTabacco: "qwe", tasteTabacco: "qwe", description: "qwe" },
+    { nameTabacco: "qwe", tasteTabacco: "qwe", description: "qwe" },
+    { nameTabacco: "qwe", tasteTabacco: "qwe", description: "qwe" },
+    { nameTabacco: "qwe", tasteTabacco: "qwe", description: "qwe" },
+    { nameTabacco: "qwe", tasteTabacco: "qwe", description: "qwe" },
+    { nameTabacco: "qwe", tasteTabacco: "qwe", description: "qwe" },
+    { nameTabacco: "qwe", tasteTabacco: "qwe", description: "qwe" },
+    { nameTabacco: "qwe", tasteTabacco: "qwe", description: "qwe" },
+    { nameTabacco: "qwe", tasteTabacco: "qwe", description: "qwe" },
+    { nameTabacco: "qwe", tasteTabacco: "qwe", description: "qwe" },
+    { nameTabacco: "qwe", tasteTabacco: "qwe", description: "qwe" },
+    { nameTabacco: "qwe", tasteTabacco: "qwe", description: "qwe" },
+    { nameTabacco: "qwe", tasteTabacco: "qwe", description: "qwe" },
+    { nameTabacco: "qwe", tasteTabacco: "qwe", description: "qwe" },
+    { nameTabacco: "qwe", tasteTabacco: "qwe", description: "qwe" },
+    { nameTabacco: "qwe", tasteTabacco: "qwe", description: "qwe" },
+    { nameTabacco: "qwe", tasteTabacco: "qwe", description: "qwe" },
+    { nameTabacco: "qwe", tasteTabacco: "qwe", description: "qwe" },
+
+    
   ]
 };
 

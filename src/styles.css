@@ -6,6 +6,9 @@ body {
   padding: 0px;
   margin: 0px;
 }
+* {
+  text-decoration: none;
+}
 #root {
   height: 100%;
 }
@@ -18,7 +21,8 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-image: url("https://uploads.codesandbox.io/uploads/user/015aef81-9a56-4322-830b-de62988b5df8/-aK8-%D0%A1%D0%BD%D0%B8%D0%BC%D0%BE%D0%BA%20%D1%8D%D0%BA%D1%80%D0%B0%D0%BD%D0%B0%202019-01-28%20%D0%B2%2013.25.44.png");
+  background-color: #D5F0FF;
+  /* background-image: url("https://uploads.codesandbox.io/uploads/user/015aef81-9a56-4322-830b-de62988b5df8/-aK8-%D0%A1%D0%BD%D0%B8%D0%BC%D0%BE%D0%BA%20%D1%8D%D0%BA%D1%80%D0%B0%D0%BD%D0%B0%202019-01-28%20%D0%B2%2013.25.44.png"); */
   background-repeat: repeat;
   background-size: 150px 150px;
   padding: 20px;

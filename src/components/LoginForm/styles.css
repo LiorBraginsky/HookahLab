@@ -2,12 +2,15 @@
   width: 350px;
   height: 350px;
   margin: 0 auto;
+  /* margin-top: 150px; */
 }
 
 .Zagolovok {
   background: #70a3f4;
   border-radius: 3px;
   box-shadow: inset 0px 0px 20px 0px rgba(245, 245, 245, 1);
+  margin-top: 150px;
+
 }
 
 .inputs {

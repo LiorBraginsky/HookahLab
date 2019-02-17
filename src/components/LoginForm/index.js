@@ -64,31 +64,29 @@ class LoginForm extends React.Component {
 
   render() {
     return (
-      <div className="LoginPage">
-        <div className="LoginBox">
-          <Title>Hookah Login</Title>
-          <MyFrom>
-            <div className="inputs">
-              <MyInput
-                onChange={this.onChangeHandler}
-                label="User Name"
-                name="username"
-                error={this.state.errors.username}
-              />
-              <MyInput
-                onChange={this.onChangeHandler}
-                label="Your Password"
-                name="password"
-                error={this.state.errors.password}
-              />
-            </div>
-            <div className="Buttons">
-              <MyButton onClick={this.submit} type="submit">
-                Sign in
+      <div className="LoginBox">
+        <Title>Hookah Login</Title>
+        <MyFrom>
+          <div className="inputs">
+            <MyInput
+              onChange={this.onChangeHandler}
+              label="User Name"
+              name="username"
+              error={this.state.errors.username}
+            />
+            <MyInput
+              onChange={this.onChangeHandler}
+              label="Your Password"
+              name="password"
+              error={this.state.errors.password}
+            />
+          </div>
+          <div className="Buttons">
+            <MyButton onClick={this.submit} type="submit">
+              Sign in
               </MyButton>
-            </div>
-          </MyFrom>
-        </div>
+          </div>
+        </MyFrom>
       </div>
     );
   }

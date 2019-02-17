@@ -25,3 +25,30 @@
 .delete {
   background-color: #e82243;
 }
+.nav-btn {
+  position: relative;
+  display: block;
+  margin: 10px auto;
+  overflow: hidden;
+  border-width: 0;
+  outline: none;
+  box-shadow: 1px 2px 3px 0px rgb(56, 63, 94);
+  background-color:  #60b5e4;
+  font-size: 12px;
+  font-weight: 500;
+  color: #44484a;
+  transition: background-color 0.3s;
+  padding: 12px 24px;
+  height: 85px;
+  border-bottom-left-radius: 20% 80%;
+  border-bottom-right-radius: 80% 30%;
+}
+
+.nav-btn:hover{
+  background-color: #1d6b96;
+  color: #f2f6f8;
+}
+
+.orange {
+  background-color:#f39f55;;
+}
