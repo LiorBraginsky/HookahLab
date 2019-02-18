@@ -14,11 +14,11 @@ class Navigation extends Component {
         <div className="logo">
           <img src={logo} alt="logo" />
         </div>
-        
+
         {localStorage.getItem('role') &&
-          (<form className="searchForm" action="">
+          (<form className="searchForm" action="" onSubmit={() => this.props.history.push("/catalog")}>
             <input type="search" />
-            <i class="fa fa-search"></i>
+            <i className="fa fa-search"></i>
           </form>)
         }
         <div className="Navigation">

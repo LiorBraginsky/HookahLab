@@ -16,7 +16,7 @@ body {
 .App {
   font-family: "Text Me One", sans-serif;
   text-align: center;
-  height: 100%;
+ 
   display: flex;
   flex-direction: column;
   align-items: center;

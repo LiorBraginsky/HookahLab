@@ -1,5 +1,7 @@
 .Catalog {
   height: 100% ;
+  width: 74%;
+  margin: 0 auto;
   background: #fff;
   padding: 50px;
   border-radius: 3px;
